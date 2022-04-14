@@ -13,4 +13,4 @@ COPY src/* $WORKDIR
 
 RUN npm install
 
-CMD ["node index.js"]
+CMD ["index.js"]

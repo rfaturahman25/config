@@ -1,0 +1,10 @@
+FROM node:16 AS build
+COPY src /app
+WORKDIR /app
+
+RUN npm install
+
+FROM gcr.io/distroless/nodejs:16
+COPY --from=build /app /app
+WORKDIR /app
+CMD ["index.js"]
