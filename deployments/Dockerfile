@@ -7,9 +7,8 @@ COPY deployments/docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-ENV WORKDIR "/srv/app/"
-WORKDIR $WORKDIR
-COPY src/* $WORKDIR
+COPY src /app
+WORKDIR /app
 
 RUN npm install
 
